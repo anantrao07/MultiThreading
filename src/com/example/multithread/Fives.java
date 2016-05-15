@@ -5,7 +5,14 @@ public class Fives  extends Thread{
 	
 	public void run(){
 		
-		tableOf5();
+		try{
+			tableOf5();
+		}catch(IllegalStateException ie){
+			
+			System.out.println("the thread encountered some error, exiting thread");
+			ie.printStackTrace();
+		}
+	
 		
 	}
 
